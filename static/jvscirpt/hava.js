@@ -125,13 +125,14 @@ todos.forEach(function(todo){
     console.log(todo.text);
 
 })
-
+// retourn un element --map
 const todoText = todos.map(function(todo){
     return todo.text;
 
 })
 console.log(todoText)
-
+// retoune une structure ayant l'element voulu
+//                          filter
 const todoCompleted = todos.filter(function(todo){
     return todo.isCompleted ===true;
 }).map(function(todo){
@@ -140,8 +141,68 @@ const todoCompleted = todos.filter(function(todo){
 })
 
 console.log(todoCompleted)
-https://www.youtube.com/watch?v=hdI2bqOjy3c
-46:30
+
+
+const a ='10';
+
+// == pour la valeur string ou numeric
+
+// === pour la valeur et le type
+
+
+if (a == 10){
+    console.log("a is 10")
+}else if (a> 10) {
+    console.log('a is greater than 10')   
+}else{
+ console.log('a is less than 10')   
+}
+
+if (a === 10){
+    console.log("a is numeric value")
+}
+//function
+
+
+function addNUms(num1= 1 , num2 =2){
+    return num1+num2
+    
+}
+
+const addNums2 = (num1=1, num2= 2) => num1 +num2;
+
+const addNums3 = (num1=1, num2= 2) => {
+    return num1 +num2;
+}
+console.log(addNUms(5,4))
+console.log(addNums2(5,4))
+console.log(addNums3(5,4))
+
+todos.forEach((todo) => console.log(todo))
+
+
+// construction function
+function people(firstname, lastname, dob){
+    this.firstname =firstname
+    this.lastname =lastname
+    this.dob =new Date(dob)
+}
+
+people.prototype.getBirthYear = function () {
+    return this.dob.getFullYear();
+}
+
+people.prototype.getFullName = function () {
+    return `${this.firstname} ${this.lastname}`
+}
+
+const person1 = new people ('John', 'Doe','4-3-1980');
+const person2 = new people ('Marie', 'Smith','6-4-1920');
+
+console.log(person2.dob.getFullYear())
+console.log(person2.getBirthYear())
+
+console.log(person1)
 
 
 
